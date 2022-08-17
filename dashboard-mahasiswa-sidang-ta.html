@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Dashboard Sidang Tugas Akhir - Sistem Informasi TA</title>
+    <link rel="icon" href="assets/img/logo.png">
+
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="assets/modules/sweetalert2/sweetalert2.scss">
+    <link rel="stylesheet" href="assets/modules/summernote/summernote-bs4.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/accordion-style.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3 ">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
+                                    class="fas fa-bars"></i></a></li>
+                        <li>
+                            <h1 class="header-nav">Dashboard Mahasiswa</h1>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                            class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                            <div class="d-sm-none d-lg-inline-block">USERNAME</div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="#" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="index.html"><img width="70" src="assets/img/logo.png"></a>
+                    </div>
+                    <div class="sidebar-brand sidebar-brand-sm">
+                        <a href="index.html">ITENAS</a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Progress Tugas Akhir</li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa.html"><i class="fas fa-th-large"></i>
+                                <span>Progress Tugas Akhir</span></a></li>
+                        <li class="menu-header">Management Tugas Akhir</li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-proposal-ta.html"><i
+                                    class="fas fa-sticky-note"></i> <span>Proposal Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-seminar-ta.html"><i
+                                    class="fas fa-book-open"></i> <span>Seminar Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-sidang-ta.html"><i
+                                    class="fas fa-book-reader"></i> <span>Sidang Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-yudisium.html"><i
+                                    class="fas fa-sticky-note"></i> <span>Yudisium</span></a>
+                        </li>
+                        <!--<li class="menu-header">Pengguna</li>
+            <li><a class="nav-link" href="#"><i class="fas fa-users"></i> <span>Pengguna Admin</span></a></li>
+            <li><a class="nav-link" href="#"><i class="fas fa-users"></i> <span>Pengguna Mahasiswa</span></a></li>
+            
+            <li class="menu-header">Management Tugas Akhir</li>
+            <li><a class="nav-link" href=""><i class="fas fa-file"></i> <span>Data Tugas Akhir</span></a></li>-->
+                    </ul>
+                </aside>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="card card-primary mb-0">
+                    <form action="#" method="POST">
+                        <input type="hidden" name="user_id" value="" required>
+                        <div class="card-header row">
+                            <h3 class="section-title col-8">Daftar Sidang Tugas Akhir</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="accordion-pendaftaran">
+                                <div class="accordion-pendaftaran-item">
+                                    <div class="accordion-pendaftaran-header card-header p-0">
+                                        <h4>Input Data Mahasiswa</h4>
+                                    </div>
+                                    <div class="accordion-pendaftaran-item-body">
+                                        <div class="accordion-pendaftaran-item-content">
+                                            <div class="data-mahasiswa">
+                                                <div class="form-group">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputNrp">NRP</label>
+                                                            <input type="text" class="form-control" id="inputNrp"
+                                                                value="162018004" disabled required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputName">Nama Mahasiswa</label>
+                                                            <input type="text" class="form-control" id="inputNama"
+                                                                value="Fachri Achmad Maulana" disabled required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 mb-0">
+                                                            <label for="inputPembimbingUtama">Pembimbing Utama</label>
+                                                            <div class="form-group">
+                                                                <select name="pembimbing_1" class="form-control"
+                                                                    required>
+                                                                    <option value="">- Pilih -</option>
+                                                                    <option value="">DOSEN PEMBIMBING UTAMA</option>
+                                                                    <option value="">DOSEN PEMBIMBING UTAMA</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-0">
+                                                            <label for="inputPembimbingKedua">Pembimbing Kedua</label>
+                                                            <div class="form-group">
+                                                                <select name="pembimbing_2" class="form-control"
+                                                                    required>
+                                                                    <option value="">- Pilih -</option>
+                                                                    <option value="">DOSEN PEMBIMBING KEDUA</option>
+                                                                    <option value="">DOSEN PEMBIMBING KEDUA</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputJudulTA">Judul Tugas Akhir</label>
+                                                            <!--JIKA DATA BELUM ADA-->
+                                                            <input type="text" class="form-control" name="judul_ta"
+                                                                placeholder="Masukkan Judul TA" required>
+                                                            <button type="submit"
+                                                                class="btn btn-primary mb-5 mt-3">Tambah Data</button>
+                                                            <!--JIKA DATA UDAH ADA-->
+                                                            <!-- <input type="text" value="" class="form-control" name="judul_ta"
+                                                                placeholder="Masukkan Judul TA" required>
+                                                            <button type="submit" class="btn btn-primary mb-5 mt-3">Edit Data</button>> -->
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-primary mb-0">
+                                <div class="card-header">
+                                    <h4>Kegiatan Tugas Akhir</h4>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-bordered table-responsive table-striped" id="table1">
+                                        <thead>
+                                            <tr>
+                                                <th>Tahap TA</th>
+                                                <th class="col-md-3">Judul TA</th>
+                                                <th class="col-md-2">Files</th>
+                                                <th>Status Approval</th>
+                                                <th>Jadwal Sidang</th>
+                                                <th>Dosen Penguji 1</th>
+                                                <th>Dosen Penguji 2</th>
+                                                <th>Action</th>
+                                                <th>Timestamp Penyimpanan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:5%">Sidang Tugas Akhir</td>
+                                                <td>JUDUL TA</td>
+                                                <td>
+                                                    <!--DIPAKAI KALO BELUM UPLOAD DRAFT, PERLU KONDISI-->
+                                                    <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i>
+                                                        Upload Draft</a>
+                                                    <!--DIPAKAI KALO UDAH UPLOAD DRAFT, PERLU KONDISI-->
+                                                    <!---<a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-eye"></i> Lihat Draf</a>-->
+                                                    <!--DIPAKAI KALO BELUM UPLOAD FILE PENGAJUAN SIDANG, PERLU KONDISI-->
+                                                    <a href="upload-form-pengajuan-sidang.html"
+                                                        class="btn btn-primary mt-2"><i class="fas fa-plus"></i>
+                                                        Upload Form Pengajuan Sidang</a>
+                                                    <!--DIPAKAI KALO UDAH UPLOAD FILE PENGAJUAN SIDANG, PERLU KONDISI-->
+                                                    <!---<a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-eye"></i> Lihat Form Pengajuan Sidang</a>-->
+
+                                                </td>
+                                                <td>
+                                                    <!--BAGIAN INI SESUAIKAN DENGAN APPROVAL DARI KOORDINATOR TA-->
+                                                    <button class="btn btn-secondary" disabled>Belum Ada File</button>
+                                                    <!-- <button class="btn btn-warning" disabled>Menunggu</button> -->
+                                                    <!--<button class="btn btn-success" disabled>Approved</button>-->
+                                                    <!--<button class="btn btn-danger" disabled>Di Tolak</button>-->
+                                                </td>
+                                                <td>
+                                                    <!--GUNAKAN INI JIKA BELUM ADA DATA JADWAL-->
+                                                    Belum ada tanggal
+                                                    <!--GUNAKAN INI JIKA ADA DATA JADWAL-->
+                                                    <!--<p>JADWAL SIDANG</p>-->
+                                                </td>
+                                                <td>
+                                                    <!--GUNAKAN INI JIKA BELUM ADA DATA DOSEN PENGUJI 1-->
+                                                    Belum ada Dosen Penguji 1
+                                                    <!--GUNAKAN INI JIKA ADA DATA DOSEN PENGUJI 1-->
+                                                    <!--<p>DOSEN PENGUJI 1</p>-->
+                                                </td>
+                                                <td>
+                                                    <!--GUNAKAN INI JIKA BELUM ADA DATA DOSEN PENGUJI 2-->
+                                                    Belum ada Dosen Penguji 2
+                                                    <!--GUNAKAN INI JIKA ADA DATA DOSEN PENGUJI 2-->
+                                                    <!--<p>DOSEN PENGUJI 2</p>-->
+                                                </td>
+                                                <td>
+                                                    <button type="submit" name="save-data"
+                                                        class="btn btn-primary">Save</button>
+                                                    <div class="invalid-feedback">
+                                                        File Belum Lengkap!
+                                                    </div>
+                                                </td>
+                                                <td>DD/MM/YYYY</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="komentar-dosen card card-primary">
+                            <div class="card-header">
+                                <div class="komentar-title">
+                                    <h4>Komentar Dosen</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="tanggal-komentar fw-bold fs-6 mb-4">
+                                    <h5>Tanggal : DD/MM/YYYY</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Komentar Dosen Penguji : </h5>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat aut eius
+                                            nostrum ut quaerat illum cupiditate repellendus perspiciatis quibusdam,
+                                            voluptate commodi illo? Sit expedita odit molestiae commodi laborum fuga ad.
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <h5>Komentar Dosen Pembimbing : </h5>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat aut eius
+                                            nostrum ut quaerat illum cupiditate repellendus perspiciatis quibusdam,
+                                            voluptate commodi illo? Sit expedita odit molestiae commodi laborum fuga ad.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    <p>Copyright © 2022 - Institut Teknologi Nasional Bandung</p>
+                </div>
+                <div class="footer-right">
+
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- General JS Scripts -->
+    <script src="assets/modules/jquery.min.js"></script>
+    <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="assets/modules/datatables/datatables.min.js"></script>
+    <script src="assets/modules/popper/popper.min.js"></script>
+    <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/modules/moment.min.js"></script>
+    <script src="assets/js/stisla.js"></script>
+
+
+    <!-- JS Libraies -->
+    <script src="assets/modules/sweetalert2/sweetalert2.min.js"></script>
+    <script src="assets/modules/summernote/summernote-bs4.js"></script>
+
+    <script>
+        $('#table1').css('display', 'table');
+        $('#table1').DataTable();
+
+        $(".treeview").click(function () {
+            $('.media').collapse('show');
+        });
+
+    </script>
+
+    <!-- Template JS File -->
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

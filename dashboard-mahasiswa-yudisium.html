@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Mahasiswa - Dashboard Sidang Proposal - Sistem Informasi TA</title>
+    <link rel="icon" href="assets/img/logo.png">
+
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="assets/modules/sweetalert2/sweetalert2.scss">
+    <link rel="stylesheet" href="assets/modules/summernote/summernote-bs4.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/accordion-style.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3 ">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
+                                    class="fas fa-bars"></i></a></li>
+                        <li>
+                            <h1 class="header-nav">Dashboard Mahasiswa</h1>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                            class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                            <div class="d-sm-none d-lg-inline-block">USERNAME</div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="#" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="index.html"><img width="70" src="assets/img/logo.png"></a>
+                    </div>
+                    <div class="sidebar-brand sidebar-brand-sm">
+                        <a href="index.html">ITENAS</a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Progress Tugas Akhir</li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa.html"><i class="fas fa-th-large"></i>
+                                <span>Progress Tugas Akhir</span></a></li>
+                        <li class="menu-header">Management Tugas Akhir</li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-proposal-ta.html"><i
+                                    class="fas fa-sticky-note"></i> <span>Proposal Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-seminar-ta.html"><i
+                                    class="fas fa-book-open"></i> <span>Seminar Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-sidang-ta.html"><i
+                                    class="fas fa-book-reader"></i> <span>Sidang Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-mahasiswa-yudisium.html"><i
+                                    class="fas fa-sticky-note"></i> <span>Yudisium</span></a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="card card-primary">
+                    <form action="#" method="POST">
+                        <input type="hidden" name="user_id" value="" required>
+                        <div class="card-header row">
+                            <h3 class="section-title col-8">Daftar Yudisium</h2>
+                        </div>
+                        <div class="card-body">
+                            <!-- SAVED FOR ACCORDION -->
+                            <div class="accordion-pendaftaran">
+                                <div class="accordion-pendaftaran-item">
+                                    <div class="accordion-pendaftaran-header card-header p-0">
+                                        <h4>Input Data Mahasiswa</h4>
+                                    </div>
+                                    <div class="accordion-pendaftaran-item-body">
+                                        <div class="accordion-pendaftaran-item-content">
+                                            <div class="data-mahasiswa">
+                                                <div class="form-group">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputNrp">NRP</label>
+                                                            <input type="text" class="form-control" id="inputNrp"
+                                                                value="" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputNama">Nama Mahasiswa</label>
+                                                            <input type="text" class="form-control" id="inputNama"
+                                                                value="" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputTanggalLahir">Tanggal Lahir</label>
+                                                            <input type="datetime-local" class="form-control mb-2">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputAlamat">Alamat</label>
+                                                            <input type="text" class="form-control" id="inputAlamat"
+                                                                value="" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputNoHP">Nomor Telephone/HP</label>
+                                                            <input type="text" class="form-control" id="inputAlamat"
+                                                                value="" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-0">
+                                                            <label for="inputUkuranToga">Ukuran Baju Toga</label>
+                                                            <div class="form-group">
+                                                                <select name="baju_toga" class="form-control" required>
+                                                                    <option value="">- Pilih -</option>
+                                                                    <option value="">XS</option>
+                                                                    <option value="">S</option>
+                                                                    <option value="">M</option>
+                                                                    <option value="">L</option>
+                                                                    <option value="">XL</option>
+                                                                    <option value="">XXL</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary mb-5 mt-3">Tambah
+                                                        Data</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-pendaftaran">
+                                <div class="accordion-pendaftaran-item">
+                                    <div class="accordion-pendaftaran-header card-header p-0">
+                                        <h4>File Persyaratan Yudisium</h4>
+                                    </div>
+                                    <div class="accordion-pendaftaran-item-body">
+                                        <div class="accordion-pendaftaran-item-content">
+                                            <div class="data-mahasiswa">
+                                                <div class="form-group">
+                                                    <div class="tabel-upload-file">
+                                                        <table class="table table-bordered table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center">Deskripsi File</th>
+                                                                    <th>Status</th>
+                                                                    <th class="text-center col-md-2">
+                                                                        Actions
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <div class="tabel-upload-file-content">
+                                                                    <tr>
+                                                                        <td>File Pas Foto Berwarna <br>
+                                                                            <span class="text-red"> minimal 400KB, Nama
+                                                                                File : NRP_Nama File </span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td>
+                                                                            <!-- <input class="form-control mb-2"
+                                                                                name="pas_foto" type="file" accept=""> -->
+                                                                            <a href="#" class="btn btn-primary mb-1" target="_blank"><i class="fas fa-eye"></i> Lihat File</a>
+                                                                            <a href="dashboard-mahasiswa-yudisium-editfile.html" class="btn btn-success">Edit File</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>File PDF Akte Kelahiran <br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File </span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="akte_kelahiran" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>File Ijasah SMA <br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File </span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="ijasah_sma" type="file" accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileTAIndonesia">File PDF
+                                                                                Judul Tugas Akhir (Bahasa
+                                                                                Indonesia)</label><br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File, File Sudah Disetujui Tugas
+                                                                                Akhir</span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="tugas_akhir_indonesia" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileTAInggris">File PDF
+                                                                                Judul Tugas Akhir (Bahasa
+                                                                                Inggris)</label><br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File, File Sudah Disetujui Tugas
+                                                                                Akhir</span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="tugas_akhir_inggris" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileBebasPeminjaman">File
+                                                                                PDF Bebas Peminjaman Buku Dari
+                                                                                Perpustakaan Dan Bukti Penyerahan Buku
+                                                                                TA</label><br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File</span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="file_bebas_peminjaman_perpustakaan"
+                                                                                type="file" accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileTranskripSikad">File
+                                                                                PDF Transkrip Dari Sikad</label><br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File, Harus Sudah Di TTD Oleh Dosen
+                                                                                Wali</span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="transkrip_sikad" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileResumeSKK">File PDF
+                                                                                Resume SKK Dari Simskk</label><br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File</span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="resume_skk" type="file" accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileTestEPT">File PDF Hasil
+                                                                                Test EPT</label><br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File</span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="test_ept" type="file" accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileBuktiPembayaran">File
+                                                                                PDF Bukti Pembayaran, Melunasi Kewajiban
+                                                                                Keuangan/Hutang Disemester Terakhir
+                                                                                (bila ada)</label>
+                                                                        </td>
+                                                                        <td>Opsional</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="bukti_pembayaran" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileSuratGantiNama">File
+                                                                                PDF Surat Ganti Nama, 1 Lembar (apabila
+                                                                                nama sekarang berbeda dengan nama yang
+                                                                                tercantum dalam akte kelahiran / surat
+                                                                                kenal lahir)</label>
+                                                                        </td>
+                                                                        <td>Opsional</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="surat_ganti_nama" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileBiodataYudisium">File
+                                                                                PDF Form Biodata Peserta
+                                                                                Yudisum</label><br>
+                                                                            <span class="text-red">Nama File : NRP_Nama
+                                                                                File</span>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="biodata_yudisium" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label
+                                                                                for="inputFileSertifikatKeahlian">Sertifikat
+                                                                                Keahlian</label><br>
+                                                                            <span class="text-red">Jika Lebih dari 1
+                                                                                sertifikat, silahkan diupload
+                                                                                berulang</span>
+                                                                        </td>
+                                                                        <td>Opsional</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="sertifikat_keahlian" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFilePoster">File PDF Poster
+                                                                                Ukuran A3</label>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="poster" type="file" accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputFileBukuTugasAkhir">File
+                                                                                Pdf Buku Tugas Akhir Yang telah
+                                                                                disahkan</label>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="buku_tugas_akhir" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><label for="inputJurnalPenelitian">Jurnal
+                                                                                Penelitian</label>
+                                                                        </td>
+                                                                        <td>Wajib</td>
+                                                                        <td><input class="form-control mb-2"
+                                                                                name="jurnal_penelitian" type="file"
+                                                                                accept="">
+                                                                        </td>
+                                                                    </tr>
+                                                                </div>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary mb-5 mt-3">Tambah
+                                                        Data</button>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 align-self-center">
+                                                        <div class="form-group">
+                                                            <p>1 dari 13 file wajib sudah diupload</p>
+                                                            <p>1 dari 3 file opsional sudah diupload</p>
+                                                            <div class="progress mb-3">
+                                                                <div class="progress-bar" role="progressbar"
+                                                                data-width="8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 align-self-center">
+                                                        <button type="submit" class="btn btn-primary">Submit Data</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <footer class="main-footer">
+                    <div class="footer-left">
+                        <p>Copyright © 2022 - Institut Teknologi Nasional Bandung</p>
+                    </div>
+                    <div class="footer-right">
+
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+
+        <!-- General JS Scripts -->
+        <script src="assets/modules/jquery.min.js"></script>
+        <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="assets/modules/datatables/datatables.min.js"></script>
+        <script src="assets/modules/popper/popper.min.js"></script>
+        <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script src="assets/modules/moment.min.js"></script>
+        <script src="assets/js/stisla.js"></script>
+
+
+        <!-- JS Libraies -->
+        <script src="assets/modules/sweetalert2/sweetalert2.min.js"></script>
+        <script src="assets/modules/summernote/summernote-bs4.js"></script>
+
+        <script>
+            $('#table1').css('display', 'table');
+            $('#table1').DataTable();
+
+            $(".treeview").click(function () {
+                $('.media').collapse('show');
+            });
+
+        </script>
+
+        <!-- Template JS File -->
+        <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

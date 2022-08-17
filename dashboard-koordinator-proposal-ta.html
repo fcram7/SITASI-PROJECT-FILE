@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Koordinator Tugas Akhir - Proposal Tugas Akhir - TA Sistem Informasi</title>
+    <link rel="icon" href="assets/img/logo.png">
+
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="assets/modules/sweetalert2/sweetalert2.scss">
+    <link rel="stylesheet" href="assets/modules/summernote/summernote-bs4.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3 ">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
+                                    class="fas fa-bars"></i></a></li>
+                        <li>
+                            <h1 class="header-nav">Dashboard Koordinator Tugas Akhir</h1>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                            class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                            <div class="d-sm-none d-lg-inline-block">USERNAME</div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="#" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="index.html"><img width="70" src="assets/img/logo.png"></a>
+                    </div>
+                    <div class="sidebar-brand sidebar-brand-sm">
+                        <a href="index.html">ITENAS</a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Management Pendaftaran Sidang</li>
+                        <li><a class="nav-link" href="dashboard-koordinator-proposal-ta.html"><i
+                                    class="fas fa-sticky-note"></i> <span>Proposal Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-koordinator-seminar-ta.html"><i
+                                    class="fas fa-book-open"></i> <span>Seminar Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="dashboard-koordinator-sidang-ta.html"><i
+                                    class="fas fa-book-reader"></i> <span>Sidang Tugas
+                                    Akhir</span></a></li>
+                        <li><a class="nav-link" href="#"><i
+                                    class="fas fa-sticky-note"></i> <span>Yudisium</span></a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Data Pendaftar Sidang Proposal Tugas Akhir</h4>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <table class="table table-bordered table-striped" id="table1">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>NRP</th>
+                                                <th>Nama Lengkap</th>
+                                                <th>Judul TA</th>
+                                                <th>Files</th>
+                                                <th>Status Approval</th>
+                                                <th>Jadwal Sidang</th>
+                                                <th>Dosen Penguji 1</th>
+                                                <th>Dosen Penguji 2</th>
+                                                <th>Changes</th>
+                                                <th>Timestamp Penyimpanan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:5%">1</td>
+                                                <td>162018003</td>
+                                                <td>Muhammad Fasha Patria</td>
+                                                <td>Pembuatan Website Manajemen Tugas Akhir</td>
+                                                <td><a href="#" class="btn btn-primary" target="_blank"><i
+                                                            class="fas fa-eye"></i> Lihat Draft</a>
+                                                    <a href="#" class="btn btn-primary mt-2" target="_blank"><i
+                                                            class="fas fa-eye"></i> Lihat Form Pengajuan Sidang</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <select name="status_approval" class="form-control" required>
+                                                        <option value="">- Pilih -</option>
+                                                        <option value="">Approved</option>
+                                                        <option value="">Ditolak</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="datetime-local" class="form-control">
+                                                </td>
+                                                <td class="text-center">
+                                                    <select name="status_approval" class="form-control" required>
+                                                        <option value="">- Pilih -</option>
+                                                        <option value="">Dosen 1</option>
+                                                        <option value="">Dosen 2</option>
+                                                    </select>
+                                                </td>
+                                                <td class="text-center">
+                                                    <select name="status_approval" class="form-control" required>
+                                                        <option value="">- Pilih -</option>
+                                                        <option value="">Dosen 1</option>
+                                                        <option value="">Dosen 2</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <button type="submit" name="save-data"
+                                                        class="btn btn-primary">Save</button>
+                                                </td>
+                                                <td>DD/MM/YYYY</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-primary">
+
+                </div>
+                <footer class="main-footer">
+                    <div class="footer-left">
+                        <p>Copyright © 2022 - Institut Teknologi Nasional Bandung</p>
+                    </div>
+                    <div class="footer-right">
+
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+
+        <!-- General JS Scripts -->
+        <script src="assets/modules/jquery.min.js"></script>
+        <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="assets/modules/datatables/datatables.min.js"></script>
+        <script src="assets/modules/popper/popper.min.js"></script>
+        <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="assets/modules/moment.min.js"></script>
+        <script src="assets/js/stisla.js"></script>
+
+
+        <!-- JS Libraies -->
+        <script src="assets/modules/sweetalert2/sweetalert2.min.js"></script>
+        <script src="assets/modules/summernote/summernote-bs4.js"></script>
+
+        <script>
+            $('#table1').css('display', 'table');
+            $('#table1').DataTable();
+
+            $(".treeview").click(function () {
+                $('.media').collapse('show');
+            });
+
+        </script>
+
+        <!-- Template JS File -->
+        <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
